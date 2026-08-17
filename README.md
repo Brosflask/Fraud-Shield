@@ -95,7 +95,7 @@ streamlit run app.py
 ---
 
 ## Ethical Considerations
-
+ 
 - **Bias:** PaySim is a simulation, not real transaction data, and has no demographic fields — the model can't discriminate on attributes it never sees, but can't be audited for demographic disparity either.
 - **Fairness:** at 64.3% precision, roughly 1 in 3 flags is a false positive. Every flag is reviewed by a human analyst before any consequence reaches a customer, the model never blocks a transaction on its own.
 - **Privacy:** PaySim is fully synthetic and pre-anonymized. Account identifiers are excluded from the model's features entirely.
