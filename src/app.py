@@ -185,7 +185,7 @@ def main():
                     st.metric("Sender Balance Change", f"${new_orig - old_orig:,.2f}")
                     st.metric("Sender Balance Ratio", f"{(new_orig / (old_orig + 1)):.3f}")
               #Feature Importance Section
-           st.subheader("🔍 Feature Importance Analysis")
+           st.subheader("Feature Importance Analysis")
    
            tab1, tab2 = st.tabs(["Feature Importance", "Feature Contributions"])
            with tab1:
