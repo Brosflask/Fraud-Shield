@@ -47,7 +47,11 @@ class FraudPredictor:
               print("Scaler called")
             except Exception:
                 st.error("Scaler for features not loaded")  
-            X = scaler.transform(X)     # type: ignore
+            numeric_cols = list(scaler.feature_names_in_)
+            X = X.copy()
+            X[numeric_cols] = scaler.transform(X[numeric_cols])
+
+            probability = float(self.model.predict_proba(X)[0, 1])
 
         probability = float(self.model.predict_proba(X)[0, 1])
         is_fraud = probability >= self.threshold
