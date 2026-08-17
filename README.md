@@ -1,6 +1,6 @@
 # FraudShield AI
 
-A machine learning-powered web application for detecting **mobile money fraud**, built with Python, scikit-learn, XGBoost, and Streamlit. FraudShield scores a single transaction's fraud probability for a human fraud analyst to review — it is a decision-support tool, not an autonomous approve/decline system.
+A machine learning-powered web application for detecting **mobile money fraud**, built with Python, scikit-learn, XGBoost, and Streamlit. FraudShield scores a single transaction's fraud probability for a human fraud analyst to review. It is a decision-support tool, not an autonomous approve/decline system.
 
 **Live Demo:** https://fraud-shield-cxoneh5rn7rjt4kmnlbjcs.streamlit.app/
 
@@ -8,7 +8,7 @@ A machine learning-powered web application for detecting **mobile money fraud**,
 
 ## Project Overview
 
-Mobile money fraud is rare — 0.13% of transactions in our data — but costly: for many users, a mobile money account is their only formal financial safety net, so a single successful fraud is a direct personal loss, not just a line item on a balance sheet. This project applies supervised machine learning to detect fraudulent mobile money transactions using **PaySim**, a synthetic mobile money simulator (6,362,604 transactions after cleaning), calibrated against real transaction logs from an African mobile money service.
+Mobile money fraud is rare, 0.13% of transactions in our data, but costly: for many users, a mobile money account is their only formal financial safety net, so a single successful fraud is a direct personal loss, not just a line item on a balance sheet. This project applies supervised machine learning to detect fraudulent mobile money transactions using **PaySim**, a synthetic mobile money simulator (6,362,604 transactions after cleaning), calibrated against real transaction logs from an African mobile money service.
 
 This project was developed for the **CS 254 — Introduction to Artificial Intelligence** course and demonstrates a complete machine learning workflow: data cleaning, exploratory analysis, feature engineering, model comparison, rigorous evaluation under severe class imbalance, and deployment as a working web application.
 
