@@ -76,13 +76,22 @@ streamlit run app.py
 ## Usage Example
 
 1. Select a model (XGBoost, Random Forest, or Logistic Regression) from the sidebar.
-2. Enter a transaction's details: type, amount, sender balance before/after, recipient balance before/after.
+<img width="382" height="695" alt="image" src="https://github.com/user-attachments/assets/362455d0-61e9-45c1-a862-14fe177ad01d" />
+
+2. Enter a transaction's details: type, amount, sender balance before/after, recipient balance before/after
 3. Click **Check for Fraud** — the app returns a fraud probability, a flagged/legitimate status, and (where available) a feature importance breakdown for that model.
 
 **Example — legitimate:** `CASH_OUT`, amount 20,000, sender 50,000 → 30,000, recipient 10,000 → 30,000 (properly credited). Expected: low fraud probability.
+<img width="1532" height="878" alt="image" src="https://github.com/user-attachments/assets/1f643ebc-8b9b-44a7-bc15-aab463113584" />
+<img width="1458" height="721" alt="image" src="https://github.com/user-attachments/assets/305c0632-8374-46a6-9524-f689813e2e7a" />
 
 **Example — fraud pattern:** `TRANSFER`, amount 450,000, sender 450,000 → 0 (fully drained), recipient 0 → 0 (unchanged despite the transfer). Expected: high fraud probability.
+<img width="1535" height="865" alt="image" src="https://github.com/user-attachments/assets/82f25c75-b078-411c-b247-d0b01d9e0930" />
+<img width="1448" height="736" alt="image" src="https://github.com/user-attachments/assets/7564e351-e067-4c6a-b635-a506aec4c1c7" />
 
+4. **View feature after fraud**- Scroll down and open the feature importance analysis section Random Forest/XGboost classifiers
+<img width="1381" height="666" alt="image" src="https://github.com/user-attachments/assets/231132cd-798e-4c16-8871-e0d270657e83" />
+<img width="1370" height="643" alt="image" src="https://github.com/user-attachments/assets/d5c1e600-4a19-44c6-8275-8b94335dc178" />
 ---
 
 ## Ethical Considerations
