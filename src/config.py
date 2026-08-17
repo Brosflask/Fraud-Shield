@@ -22,7 +22,7 @@ MODEL_CONFIGS = {
         "features_file": "model_container/feature_list.pkl",
         "description": "Logistic Regression Classifier",
         "color": "#e599f7",
-        "scaler": "model_container/logistic_scaler"
+        "scaler": "model_container/logistic_scaler.pkl"
     }
 
 }
