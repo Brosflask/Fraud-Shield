@@ -32,7 +32,7 @@ Accuracy is deliberately *not* the headline metric here: at a 0.13% fraud rate, 
 
 ## A leakage issue we found and fixed
 
-An early model trained with an engineered feature, `errorBalanceOrig`, scored a suspicious PR-AUC of **1.0** — every fraud case caught, zero false positives. That's a warning sign, not an achievement. Investigation showed `errorBalanceOrig` has ~0 variance across all fraud transactions (std ≈ 4.9×10⁻¹¹) — an artifact of how PaySim's simulator scripts its injected fraud records, not a real, generalizable pattern. The feature was removed and all models retrained on the corrected feature set.
+An early model trained with an engineered feature, `errorBalanceOrig`, scored a suspicious PR-AUC of **1.0** for every fraud case caught, zero false positives. That's a warning sign, not an achievement. Investigation showed `errorBalanceOrig` has ~0 variance across all fraud transactions (std ≈ 4.9×10⁻¹¹), an artifact of how PaySim's simulator scripts its injected fraud records, not a real, generalizable pattern. The feature was removed and all models retrained on the corrected feature set.
 
 ## Key finding from the data
 
@@ -79,7 +79,7 @@ streamlit run app.py
 <img width="382" height="695" alt="image" src="https://github.com/user-attachments/assets/362455d0-61e9-45c1-a862-14fe177ad01d" />
 
 2. Enter a transaction's details: type, amount, sender balance before/after, recipient balance before/after
-3. Click **Check for Fraud** — the app returns a fraud probability, a flagged/legitimate status, and (where available) a feature importance breakdown for that model.
+3. Click **Check for Fraud**. The app returns a fraud probability, a flagged/legitimate status, and (where available) a feature importance breakdown for that model.
 
 **Example — legitimate:** `CASH_OUT`, amount 20,000, sender 50,000 → 30,000, recipient 10,000 → 30,000 (properly credited). Expected: low fraud probability.
 <img width="1532" height="878" alt="image" src="https://github.com/user-attachments/assets/1f643ebc-8b9b-44a7-bc15-aab463113584" />
@@ -97,9 +97,9 @@ streamlit run app.py
 ## Ethical Considerations
 
 - **Bias:** PaySim is a simulation, not real transaction data, and has no demographic fields — the model can't discriminate on attributes it never sees, but can't be audited for demographic disparity either.
-- **Fairness:** at 64.3% precision, roughly 1 in 3 flags is a false positive. Every flag is reviewed by a human analyst before any consequence reaches a customer — the model never blocks a transaction on its own.
+- **Fairness:** at 64.3% precision, roughly 1 in 3 flags is a false positive. Every flag is reviewed by a human analyst before any consequence reaches a customer, the model never blocks a transaction on its own.
 - **Privacy:** PaySim is fully synthetic and pre-anonymized. Account identifiers are excluded from the model's features entirely.
-- **Transparency:** every prediction can be inspected — the app shows the exact feature values and, where available, feature importance behind each result.
+- **Transparency:** Every prediction can be inspected. The app shows the exact feature values and, where available, feature importance behind each result.
 
 Full analysis in the project's Final Report.
 
