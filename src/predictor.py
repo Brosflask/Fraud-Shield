@@ -51,8 +51,6 @@ class FraudPredictor:
             X = X.copy()
             X[numeric_cols] = scaler.transform(X[numeric_cols])
 
-            probability = float(self.model.predict_proba(X)[0, 1])
-
         probability = float(self.model.predict_proba(X)[0, 1])
         is_fraud = probability >= self.threshold
         
