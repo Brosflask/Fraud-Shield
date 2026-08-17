@@ -150,7 +150,7 @@ def main():
                 # Make prediction
         with st.spinner("Analyzing transaction..."):
            try:
-            predictor = FraudPredictor(model, feature_names, com_para[0])        
+            predictor = FraudPredictor(model, feature_names,model_name=com_para[1] ,threshold=com_para[0])        
 
             probability, is_fraud, X = predictor.predict(
                         step, txn_type, amount,
