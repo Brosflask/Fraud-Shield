@@ -32,7 +32,7 @@ def main():
     """Main application entry point."""
     
     # Title
-    st.title("🛡️ Fraud Detection System")
+    st.title("Fraud Detection System")
     st.markdown("""
         Enter transaction details below to check for potential fraud. 
         The system will analyze the transaction and provide a risk assessment.
